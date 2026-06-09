@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #F5F5F0;
+  color: #1A1A1A;
+  margin: 0;
+  padding: 0;
+}
+
+.font-mono {
+  font-family: 'DM Mono', monospace !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D0D0D0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #AAAAAA; }
+
+/* Spinner fix — border-3 helper */
+.border-3 { border-width: 3px; }
+
+/* Number spinner hide */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+/* Table row hover tint */
+.tr-hover:hover { background-color: #F8FFE8; }
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #EDEDEA 25%, #E0E0DC 50%, #EDEDEA 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Print */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
